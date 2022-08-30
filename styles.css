@@ -9,6 +9,9 @@ body {
     pointer-events: none; */
 }
 
+.invisible {
+    opacity: 0;
+}
 @media (min-width: 560px) {
     .non-mobile {
         /* display: block; */

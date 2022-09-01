@@ -16,3 +16,5 @@ function $(selector) {
     return elementsFound;
 }
 
+$("#pageTitle") // [h1#pageTitle]
+$(".pageTitle") // [h1.pageTitle]

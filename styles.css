@@ -12,6 +12,10 @@ body {
 .invisible {
     opacity: 0;
 }
+.cookieImage {
+    height: 300px;
+    width: auto;
+}
 @media (min-width: 560px) {
     .non-mobile {
         /* display: block; */

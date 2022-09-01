@@ -3,18 +3,24 @@
 // const pageTitleElement = $("#PageTitle")[0];
 // pageTitleElement.innerHTML = "Hi, My name is Ben!";
 
-
-// 1.
-// Change the text of our page title
+/**
+ * 1. Basic Example
+ */
+// Grab page title
 const pageTitleElement = document.getElementById("PageTitle");
-pageTitleElement.innerHTML = "Hi, My name is Ben!";
+// Change the text of our page title
+pageTitleElement.innerHTML = "Hi, Class 2208!";
 // Log something on page title click
 pageTitleElement.addEventListener("click", () => console.log("Hello!"))
 
-// 2.
+/**
+ * 2. Updating the dom using JS (glowing borders)
+ */
 const images = $("img");
 
 let itterations = 0;
+const colorChangeSpeed = 100;
+
 // Every x seconds...
 setInterval(() => {
     // Count how many times we've been through here
@@ -30,28 +36,25 @@ setInterval(() => {
                 50%
             )
         `
+        // Apply new border color
         currImage.style.border = `10px solid ${borderColor}`;
-        pageTitleElement.style.color = borderColor;
     }
-}, 10);
+}, colorChangeSpeed);
 
-// setTimeout(() => {
-//     const tempTextElement = $("#tempText")[0];
-//     tempTextElement.classList.add("invisible");
-// }, 3000)
-
-
-
-
-const pageTitle = $("#PageTitle")[0];
-// const pageTitle = document.getElementById("PageTitle");
-console.log(pageTitle)
-
-pageTitle.innerHTML = "Hi Class 2208!";
+/**
+ * 3. Make element disappear after x seconds
+ */
+var timeToDisappear = 3000;
+setTimeout(() => {
+    const tempTextElement = $("#tempText")[0];
+    tempTextElement.classList.add("invisible");
+}, timeToDisappear)
 
 
 
-
+/**
+ * 4. Cookie Clicker
+ */
 // Keep track of how many cookies we have on hand
 let cookieCount = 0;
 
@@ -72,31 +75,30 @@ setInterval(() => {
     render();
 }, 500);
 
-// const cookieImageEle = document.getElementsByClassName("cookieImage")[0];
-// cookieImageEle.addEventListener("click", () => {
-//     cookieCount++;
-
-//     render();
-// })
-
-const cookieImageEle = $(".cookieImage")
-cookieImageEle.click((event) => {
-    console.log(event.target)
+/**
+ * Click Cookie To Add Points 
+ */
+const cookieImageEle = document.getElementsByClassName("cookieImage")[0];
+cookieImageEle.addEventListener("click", () => {
     cookieCount++;
 
     render();
 })
 
-// const CookieButton = () => {
-//     const handleClick = () => {
-//         numCookies++
-//     }
+/**
+ * Clickable Cookie w/ Jquery
+ */
+// const cookieImageEle = $(".cookieImage")
+// cookieImageEle.click((event) => {
+//     console.log(event.target)
+//     cookieCount++;
 
-//     return (
-//         <button onClick={handleClick}>button</button>
-//     )
-// }
+//     render();
+// })
 
+/**
+ * Setting up "Buy X" buttons
+ */
 /**
  *  1. Event Delegation - We add the event to the parent element and figure out
  *  what was clicked afterwards
@@ -134,7 +136,7 @@ const factoryButton = document.getElementsByClassName("factory")[0];
 factoryButton.addEventListener("click", logWhatWasBought)
 
 /**
- * Adding an event listener to each item using a loop
+ * 3. Adding an event listener to each item using a loop
  */
 const purchaseButtons = document.getElementsByClassName("purchaseButton");
 for (var i = 0; i < purchaseButtons.length; i++) {
@@ -143,7 +145,9 @@ for (var i = 0; i < purchaseButtons.length; i++) {
 }
 
 
-
+/**
+ * Working with select elements
+ */
 // Change via select example
 const selectEle = document.getElementById("factorySelect");
 
